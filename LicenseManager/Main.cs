@@ -60,10 +60,19 @@ namespace LicenseManager
 				DataPropertyName = "EndDate"
 			};
 
+			DataGridViewTextBoxColumn colCommercial = new DataGridViewTextBoxColumn()
+			{
+				CellTemplate = cell,
+				Name = "Commercial",
+				HeaderText = "Commercial",
+				DataPropertyName = "Commercial"
+			};
+
 			dataGridView1.Columns.Add(colName);
 			dataGridView1.Columns.Add(colEmail);
 			dataGridView1.Columns.Add(colNumUsers);
 			dataGridView1.Columns.Add(colEndDate);
+			dataGridView1.Columns.Add(colCommercial);
 
 			if (LicenseInfo.Licenses.Count > 0)
 			{

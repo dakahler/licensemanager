@@ -36,6 +36,7 @@
 			this.NumUsersTextBox = new System.Windows.Forms.TextBox();
 			this.OkButton = new System.Windows.Forms.Button();
 			this._CancelButton = new System.Windows.Forms.Button();
+			this.CommercialCheckBox = new System.Windows.Forms.CheckBox();
 			this.SuspendLayout();
 			// 
 			// NameLabel
@@ -85,10 +86,11 @@
 			this.NumUsersTextBox.Name = "NumUsersTextBox";
 			this.NumUsersTextBox.Size = new System.Drawing.Size(286, 20);
 			this.NumUsersTextBox.TabIndex = 5;
+			this.NumUsersTextBox.Text = "1";
 			// 
 			// OkButton
 			// 
-			this.OkButton.Location = new System.Drawing.Point(271, 138);
+			this.OkButton.Location = new System.Drawing.Point(271, 154);
 			this.OkButton.Name = "OkButton";
 			this.OkButton.Size = new System.Drawing.Size(75, 23);
 			this.OkButton.TabIndex = 6;
@@ -99,7 +101,7 @@
 			// _CancelButton
 			// 
 			this._CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this._CancelButton.Location = new System.Drawing.Point(362, 138);
+			this._CancelButton.Location = new System.Drawing.Point(362, 154);
 			this._CancelButton.Name = "_CancelButton";
 			this._CancelButton.Size = new System.Drawing.Size(75, 23);
 			this._CancelButton.TabIndex = 7;
@@ -107,13 +109,24 @@
 			this._CancelButton.UseVisualStyleBackColor = true;
 			this._CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
 			// 
+			// CommercialCheckBox
+			// 
+			this.CommercialCheckBox.AutoSize = true;
+			this.CommercialCheckBox.Location = new System.Drawing.Point(175, 122);
+			this.CommercialCheckBox.Name = "CommercialCheckBox";
+			this.CommercialCheckBox.Size = new System.Drawing.Size(80, 17);
+			this.CommercialCheckBox.TabIndex = 8;
+			this.CommercialCheckBox.Text = "Commercial";
+			this.CommercialCheckBox.UseVisualStyleBackColor = true;
+			// 
 			// NewLicense
 			// 
 			this.AcceptButton = this.OkButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.CancelButton;
-			this.ClientSize = new System.Drawing.Size(484, 188);
+			this.ClientSize = new System.Drawing.Size(484, 193);
+			this.Controls.Add(this.CommercialCheckBox);
 			this.Controls.Add(this._CancelButton);
 			this.Controls.Add(this.OkButton);
 			this.Controls.Add(this.NumUsersTextBox);
@@ -140,5 +153,6 @@
 		private System.Windows.Forms.TextBox NumUsersTextBox;
 		private System.Windows.Forms.Button OkButton;
 		private System.Windows.Forms.Button _CancelButton;
+		private System.Windows.Forms.CheckBox CommercialCheckBox;
 	}
 }

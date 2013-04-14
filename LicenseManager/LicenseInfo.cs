@@ -43,6 +43,13 @@ namespace LicenseManager
 			set { _NumUsers = value; }
 		}
 
+		private bool _Commercial;
+		public bool Commercial
+		{
+			get { return _Commercial; }
+			set { _Commercial = value; }
+		}
+
 		public String GetLicenseText()
 		{
 			String userString = " user";
@@ -51,15 +58,21 @@ namespace LicenseManager
 				userString += "s";
 			}
 
+			String commercialString = " commercial use for ";
+			if (!Commercial)
+			{
+				commercialString = " non-commercial use for ";
+			}
+
 			String licenseText = "Licensed to: " + Name + " (" + Email + ") " +
 				"Supports expires: " + EndDate.ToString("d") + " " +
-				"Licensed for " + NumUsers + userString;
+				"Licensed for" + commercialString + NumUsers + userString;
 
 			String licenseKey = GetLicenseKey(licenseText);
 
 			String finalLicenseText = "Licensed to: " + Name + " (" + Email + ")" + Environment.NewLine +
 				"Supports expires: " + EndDate.ToString("d") + Environment.NewLine +
-				"Licensed for " + NumUsers + userString + Environment.NewLine;
+				"Licensed for" + commercialString + NumUsers + userString + Environment.NewLine;
 
 			foreach (String line in SplitByLength(licenseKey, 64))
 			{
