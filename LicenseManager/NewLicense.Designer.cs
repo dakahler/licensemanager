@@ -36,7 +36,7 @@
 			this.NumUsersTextBox = new System.Windows.Forms.TextBox();
 			this.OkButton = new System.Windows.Forms.Button();
 			this._CancelButton = new System.Windows.Forms.Button();
-			this.CommercialCheckBox = new System.Windows.Forms.CheckBox();
+			this.FloatingCheckBox = new System.Windows.Forms.CheckBox();
 			this.SuspendLayout();
 			// 
 			// NameLabel
@@ -109,15 +109,15 @@
 			this._CancelButton.UseVisualStyleBackColor = true;
 			this._CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
 			// 
-			// CommercialCheckBox
+			// FloatingCheckBox
 			// 
-			this.CommercialCheckBox.AutoSize = true;
-			this.CommercialCheckBox.Location = new System.Drawing.Point(175, 122);
-			this.CommercialCheckBox.Name = "CommercialCheckBox";
-			this.CommercialCheckBox.Size = new System.Drawing.Size(80, 17);
-			this.CommercialCheckBox.TabIndex = 8;
-			this.CommercialCheckBox.Text = "Commercial";
-			this.CommercialCheckBox.UseVisualStyleBackColor = true;
+			this.FloatingCheckBox.AutoSize = true;
+			this.FloatingCheckBox.Location = new System.Drawing.Point(175, 122);
+			this.FloatingCheckBox.Name = "FloatingCheckBox";
+			this.FloatingCheckBox.Size = new System.Drawing.Size(80, 17);
+			this.FloatingCheckBox.TabIndex = 8;
+			this.FloatingCheckBox.Text = "Floating";
+			this.FloatingCheckBox.UseVisualStyleBackColor = true;
 			// 
 			// NewLicense
 			// 
@@ -126,7 +126,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.CancelButton;
 			this.ClientSize = new System.Drawing.Size(484, 193);
-			this.Controls.Add(this.CommercialCheckBox);
+			this.Controls.Add(this.FloatingCheckBox);
 			this.Controls.Add(this._CancelButton);
 			this.Controls.Add(this.OkButton);
 			this.Controls.Add(this.NumUsersTextBox);
@@ -153,6 +153,6 @@
 		private System.Windows.Forms.TextBox NumUsersTextBox;
 		private System.Windows.Forms.Button OkButton;
 		private System.Windows.Forms.Button _CancelButton;
-		private System.Windows.Forms.CheckBox CommercialCheckBox;
+		private System.Windows.Forms.CheckBox FloatingCheckBox;
 	}
 }

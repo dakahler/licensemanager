@@ -15,40 +15,11 @@ namespace LicenseManager
 	{
 		public static List<LicenseInfo> Licenses = new List<LicenseInfo>();
 
-		private String _Name;
-		public System.String Name
-		{
-			get { return _Name; }
-			set { _Name = value; }
-		}
-
-		private String _Email;
-		public System.String Email
-		{
-			get { return _Email; }
-			set { _Email = value; }
-		}
-
-		private DateTime _EndDate;
-		public System.DateTime EndDate
-		{
-			get { return _EndDate; }
-			set { _EndDate = value; }
-		}
-
-		private int _NumUsers;
-		public int NumUsers
-		{
-			get { return _NumUsers; }
-			set { _NumUsers = value; }
-		}
-
-		private bool _Commercial;
-		public bool Commercial
-		{
-			get { return _Commercial; }
-			set { _Commercial = value; }
-		}
+		public System.String Name { get; set; }
+		public System.String Email { get; set; }
+		public System.DateTime EndDate { get; set; }
+		public int NumUsers { get; set; }
+		public bool Floating { get; set; }
 
 		public String GetLicenseText()
 		{
@@ -58,21 +29,21 @@ namespace LicenseManager
 				userString += "s";
 			}
 
-			String commercialString = " commercial use for ";
-			if (!Commercial)
+			String floatingString = "Floating license for ";
+			if (!Floating)
 			{
-				commercialString = " non-commercial use for ";
+				floatingString = "Per-seat license for ";
 			}
 
 			String licenseText = "Licensed to: " + Name + " (" + Email + ") " +
 				"Supports expires: " + EndDate.ToString("d") + " " +
-				"Licensed for" + commercialString + NumUsers + userString;
+				floatingString + NumUsers + userString;
 
 			String licenseKey = GetLicenseKey(licenseText);
 
 			String finalLicenseText = "Licensed to: " + Name + " (" + Email + ")" + Environment.NewLine +
 				"Supports expires: " + EndDate.ToString("d") + Environment.NewLine +
-				"Licensed for" + commercialString + NumUsers + userString + Environment.NewLine;
+				floatingString + NumUsers + userString + Environment.NewLine;
 
 			foreach (String line in SplitByLength(licenseKey, 64))
 			{

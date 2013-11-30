@@ -60,19 +60,19 @@ namespace LicenseManager
 				DataPropertyName = "EndDate"
 			};
 
-			DataGridViewTextBoxColumn colCommercial = new DataGridViewTextBoxColumn()
+			DataGridViewTextBoxColumn colFloating = new DataGridViewTextBoxColumn()
 			{
 				CellTemplate = cell,
-				Name = "Commercial",
-				HeaderText = "Commercial",
-				DataPropertyName = "Commercial"
+				Name = "Floating",
+				HeaderText = "Floating",
+				DataPropertyName = "Floating"
 			};
 
 			dataGridView1.Columns.Add(colName);
 			dataGridView1.Columns.Add(colEmail);
 			dataGridView1.Columns.Add(colNumUsers);
 			dataGridView1.Columns.Add(colEndDate);
-			dataGridView1.Columns.Add(colCommercial);
+			dataGridView1.Columns.Add(colFloating);
 
 			if (LicenseInfo.Licenses.Count > 0)
 			{
@@ -112,6 +112,7 @@ namespace LicenseManager
 			XmlSerializer serializer = new XmlSerializer(LicenseInfo.Licenses.GetType(), new Type[] {typeof(LicenseInfo)});
 			TextReader reader = new StreamReader(XmlPath);
 			LicenseInfo.Licenses = (List<LicenseInfo>)serializer.Deserialize(reader);
+			reader.Close();
 		}
 
 		private void Main_FormClosing(object sender, FormClosingEventArgs e)

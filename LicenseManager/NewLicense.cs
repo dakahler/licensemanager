@@ -30,7 +30,7 @@ namespace LicenseManager
 			newLicense.Email = EmailTextBox.Text;
 			newLicense.NumUsers = int.Parse(NumUsersTextBox.Text);
 			newLicense.EndDate = DateTime.Now.AddYears(1);
-			newLicense.Commercial = CommercialCheckBox.Checked;
+			newLicense.Floating = FloatingCheckBox.Checked;
 
 			LicenseInfo.Licenses.Add(newLicense);
 
